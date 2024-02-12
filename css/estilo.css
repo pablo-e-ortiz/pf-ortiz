@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body {
+    background-color: #f8f8f8;
+}
+header, nav {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    background-color: aquamarine;
+}
+.header img{
+    max-width: 100%;
+    height: auto;
+}
+.bg-body-color{
+    background-color: #1ccda9;
+}
+.navbar-brand img{
+    width: 30px;
+}
+main {
+    font-family: 'Rubik', sans-serif;
+    text-align: justify;
+    margin: 20px;
+}
+footer {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    background-color: #272f51; 
+    padding: 1rem;
+}
+h4, a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
