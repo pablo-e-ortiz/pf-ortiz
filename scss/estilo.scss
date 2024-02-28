@@ -1,0 +1,192 @@
+$font-family: 'Rubik', sans-serif;
+$primary-color: aquamarine;
+$secondary-color: #1ccda9;
+$footer-color: #272f51;
+$text-color: aliceblue;
+$carousel-aspect-ratio: 9 / 16; 
+
+// Definición de breakpoints para diseño responsivo
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+
+// Mixin para estilos de texto
+@mixin text-styles {
+  font-family: $font-family;
+  text-align: justify;
+}
+
+// Mixin para estilos de carrusel
+@mixin carousel-styles {
+  .carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: calc(100% * #{$carousel-aspect-ratio});
+    overflow: hidden;
+
+    .carousel-item, .carousel-inner img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+      object-fit: cover;
+    }
+
+    .carousel-item.active {
+      opacity: 1;
+    }
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+header, nav {
+  font-family: $font-family;
+  text-align: center;
+  background-color: $primary-color;
+
+  img {
+    max-width: 200px;
+    height: auto;
+  }
+}
+
+.bg-body-color {
+  background-color: $secondary-color;
+}
+
+.navbar-brand img {
+  width: 30px;
+}
+
+main {
+  @include text-styles;
+  margin: 30px;
+}
+
+footer {
+  @include text-styles;
+  background-color: $footer-color;
+  padding: 1rem;
+}
+
+h5 {
+  @include text-styles;
+  font-weight: bold;
+  text-align: center;
+}
+
+h6, a {
+  @include text-styles;
+  text-align: center;
+  text-decoration: none;
+  color: $text-color;
+}
+
+.card{
+  transition: box-shadow 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+#carouselIndex, #carouselHotels, #carouselHotels2, #carouselHotels3 {
+  max-width: 600px;
+  margin: 30px auto;
+  overflow: hidden;
+
+  @include carousel-styles;
+}
+.card-text {
+  .text-body-secondary {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 10px;
+      fill: $footer-color;
+    }
+    small {
+      color: $footer-color;
+    }
+  }
+}
+
+.nosotros {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+
+  .imagen img {
+    max-width: 100%;
+    height: auto;
+
+    @media screen and (max-width: $breakpoint-sm) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .texto p {
+    font-size: 16px;
+
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: 18px;
+    }
+  }
+}
+
+.mb-3 {
+  color: #787878;
+}
+
+.btn-primary {
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+
+  &:hover, &:active {
+    background-color: #128770;
+    border-color: #128770;
+  }
+}
+
+.guias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  
+
+  .guia1, .guia2, .guia3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    margin: 0 10px;
+    
+
+    .card-title {
+      margin-bottom: 10px;
+    }
+
+    .images img {
+      max-width: 100%;
+      height: 300px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    transition: box-shadow 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+}
+}

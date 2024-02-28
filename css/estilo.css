@@ -1,39 +1,164 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-body {
-    background-color: #f8f8f8;
-}
-header, nav {
-    font-family: 'Rubik', sans-serif;
-    text-align: center;
-    background-color: aquamarine;
-}
-.header img{
-    max-width: 100%;
-    height: auto;
-}
-.bg-body-color{
-    background-color: #1ccda9;
-}
-.navbar-brand img{
-    width: 30px;
-}
-main {
-    font-family: 'Rubik', sans-serif;
-    text-align: justify;
-    margin: 20px;
-}
-footer {
-    font-family: 'Rubik', sans-serif;
-    text-align: center;
-    background-color: #272f51; 
-    padding: 1rem;
-}
-h4, a {
-    text-decoration: none;
-    color: aliceblue;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  background-color: #f8f8f8;
+}
+
+header, nav {
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+  background-color: aquamarine;
+}
+header img, nav img {
+  max-width: 200px;
+  height: auto;
+}
+
+.bg-body-color {
+  background-color: #1ccda9;
+}
+
+.navbar-brand img {
+  width: 30px;
+}
+
+main {
+  font-family: "Rubik", sans-serif;
+  text-align: justify;
+  margin: 30px;
+}
+
+footer {
+  font-family: "Rubik", sans-serif;
+  text-align: justify;
+  background-color: #272f51;
+  padding: 1rem;
+}
+
+h5 {
+  font-family: "Rubik", sans-serif;
+  text-align: justify;
+  font-weight: bold;
+  text-align: center;
+}
+
+h6, a {
+  font-family: "Rubik", sans-serif;
+  text-align: justify;
+  text-align: center;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.card {
+  transition: box-shadow 0.3s ease-in-out;
+}
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#carouselIndex, #carouselHotels, #carouselHotels2, #carouselHotels3 {
+  max-width: 600px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+#carouselIndex .carousel-inner, #carouselHotels .carousel-inner, #carouselHotels2 .carousel-inner, #carouselHotels3 .carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: calc(100% * 0.5625);
+  overflow: hidden;
+}
+#carouselIndex .carousel-inner .carousel-item, #carouselIndex .carousel-inner .carousel-inner img, #carouselHotels .carousel-inner .carousel-item, #carouselHotels .carousel-inner .carousel-inner img, #carouselHotels2 .carousel-inner .carousel-item, #carouselHotels2 .carousel-inner .carousel-inner img, #carouselHotels3 .carousel-inner .carousel-item, #carouselHotels3 .carousel-inner .carousel-inner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  object-fit: cover;
+}
+#carouselIndex .carousel-inner .carousel-item.active, #carouselHotels .carousel-inner .carousel-item.active, #carouselHotels2 .carousel-inner .carousel-item.active, #carouselHotels3 .carousel-inner .carousel-item.active {
+  opacity: 1;
+}
+
+.card-text .text-body-secondary {
+  display: flex;
+  align-items: center;
+}
+.card-text .text-body-secondary svg {
+  margin-right: 10px;
+  fill: #272f51;
+}
+.card-text .text-body-secondary small {
+  color: #272f51;
+}
+
+.nosotros {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+.nosotros .imagen img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 576px) {
+  .nosotros .imagen img {
+    margin-bottom: 10px;
+  }
+}
+.nosotros .texto p {
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .nosotros .texto p {
+    font-size: 18px;
+  }
+}
+
+.mb-3 {
+  color: #787878;
+}
+
+.btn-primary {
+  background-color: #1ccda9;
+  border-color: #1ccda9;
+}
+.btn-primary:hover, .btn-primary:active {
+  background-color: #128770;
+  border-color: #128770;
+}
+
+.guias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.guias .guia1, .guias .guia2, .guias .guia3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  margin: 0 10px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.guias .guia1 .card-title, .guias .guia2 .card-title, .guias .guia3 .card-title {
+  margin-bottom: 10px;
+}
+.guias .guia1 .images img, .guias .guia2 .images img, .guias .guia3 .images img {
+  max-width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.guias .guia1:hover, .guias .guia2:hover, .guias .guia3:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/*# sourceMappingURL=estilo.css.map */
